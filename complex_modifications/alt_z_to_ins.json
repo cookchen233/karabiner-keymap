@@ -1,0 +1,29 @@
+{
+  "title": "Alt+z to Insert",
+  "rules": [
+    {
+      "description": "Alt+z to Insert, for 同花顺",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "insert"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
