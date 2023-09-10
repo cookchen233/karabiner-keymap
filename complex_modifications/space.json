@@ -365,7 +365,7 @@
                 "modifiers": ["command", "shift"]
             }],
             "conditions": [{
-                "type": "variable_if",p
+                "type": "variable_if",
                 "name": "spacefn_mode",
                 "value": 1
             },{

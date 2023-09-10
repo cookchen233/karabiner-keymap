@@ -1,8 +1,8 @@
 {
-  "title": "Command+[u/i/o/p] to active most ofen app",
+  "title": "To open most often app using Command+[u/i/o/p]",
   "rules": [
     {
-      "description": "Command+u to active Visual Studio Code",
+      "description": "Command+u to open Visual Studio Code",
       "manipulators": [{
           "type": "basic",
           "from": {
@@ -22,7 +22,7 @@
               }
           ]
       }]
-  },  {
+  }, {
       "description": "Command+i to active IntelliJ IDEA",
       "manipulators": [{
           "type": "basic",

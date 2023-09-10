@@ -1,0 +1,29 @@
+{
+  "title": "When iTerm2 is fronted",
+  "rules": [
+    {
+      "description": "Change option+u to command+u while command+u is used to open Visual Studio",
+      "manipulators": [{
+        "type": "basic",
+        "from": {
+            "key_code": "u",
+            "modifiers": {
+                "mandatory": [
+                  "option"
+                ],
+                "optional": [
+                  "any"
+                ]
+              }
+        },
+        "to": [
+            {
+                "key_code": "u",
+                "modifiers":["command"]
+            }
+        ]
+    }]
+    }
+  ]
+}
+
