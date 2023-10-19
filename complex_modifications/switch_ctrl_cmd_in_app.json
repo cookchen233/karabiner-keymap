@@ -50,59 +50,7 @@
         },{
             "type": "basic",
             "from": {"key_code": "spacebar","modifiers": {"mandatory": ["left_control"]}},
-            "to": [
-                {
-                    "shell_command": "open -a 'Alfred 5.app'"
-                }
-            ],
-            "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
-                "type": "event_changed_if",
-                "value": false
-            }]
-        },{
-            "type": "basic",
-            "from": {"key_code": "u","modifiers": {"mandatory": ["left_control"]}},
-            "to": [
-                {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
-                }
-            ],
-            "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
-                "type": "event_changed_if",
-                "value": false
-            }]
-        },{
-            "type": "basic",
-            "from": {"key_code": "i","modifiers": {"mandatory": ["left_control"]}},
-            "to": [
-                {
-                    "shell_command": "open -a 'IntelliJ IDEA.app'"
-                }
-            ],
-            "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
-                "type": "event_changed_if",
-                "value": false
-            }]
-        },{
-            "type": "basic",
-            "from": {"key_code": "o","modifiers": {"mandatory": ["left_control"]}},
-            "to": [
-                {
-                    "shell_command": "open -a 'Google Chrome.app'"
-                }
-            ],
-            "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
-                "type": "event_changed_if",
-                "value": false
-            }]
-        },{
-            "type": "basic",
-            "from": {"key_code": "p","modifiers": {"mandatory": ["left_control"]}},
-            "to": [
-                {
-                    "shell_command": "open -a 'ChatGPT.app'"
-                }
-            ],
+            "to": [{"key_code": "spacebar","modifiers": ["left_command"]}],
             "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
                 "type": "event_changed_if",
                 "value": false
