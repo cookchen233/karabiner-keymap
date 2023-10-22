@@ -1,12 +1,12 @@
 {
-  "title": "To open most often app using Command+g",
+  "title": "To open most often app using Command+e",
   "rules": [
     {
-      "description": "Command+g to open Finder",
+      "description": "Command+e to open Finder",
       "manipulators": [{
           "type": "basic",
           "from": {
-              "key_code": "g",
+              "key_code": "e",
               "modifiers": {
                   "mandatory": [
                     "command"

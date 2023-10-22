@@ -1,0 +1,131 @@
+{
+  "title": "Magic -= to ->, =- to => in 5 seconds",
+  "rules": [
+    {
+      "description": "Magic -= to ->, =- to => in 5 seconds",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "equal_sign",
+              "modifiers": {
+                  "optional": ["any"]
+              }
+          },
+          "to": [
+            {
+              "key_code": "period",
+              "modifiers": ["shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "equal_sign to be arrow",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "hyphen",
+              "modifiers": {
+                  "optional": ["any"]
+              }
+          },
+          "to": [
+            {
+              "key_code": "period",
+              "modifiers": ["shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "hyphen to be arrow",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 5000
+          },
+          "from": {
+              "key_code": "hyphen"
+          },
+          "to": [
+              {
+                  "set_variable": {
+                  "name": "equal_sign to be arrow",
+                  "value": 1
+                  }
+              },
+              {
+                  "key_code": "hyphen"
+              }
+          ],
+          "to_delayed_action": {
+              "to_if_invoked": [
+                {
+                  "set_variable": {
+                    "name": "equal_sign to be arrow",
+                    "value": 0
+                  }
+                }
+              ],
+              "to_if_canceled": [
+                {
+                  "set_variable": {
+                    "name": "equal_sign to be arrow",
+                    "value": 0
+                  }
+                }
+              ]
+          }
+        },
+        {
+          "type": "basic",
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 5000
+          },
+          "from": {
+              "key_code": "equal_sign"
+          },
+          "to": [
+              {
+                  "set_variable": {
+                  "name": "hyphen to be arrow",
+                  "value": 1
+                  }
+              },
+              {
+                  "key_code": "equal_sign"
+              }
+          ],
+          "to_delayed_action": {
+              "to_if_invoked": [
+                {
+                  "set_variable": {
+                    "name": "hyphen to be arrow",
+                    "value": 0
+                  }
+                }
+              ],
+              "to_if_canceled": [
+                {
+                  "set_variable": {
+                    "name": "hyphen to be arrow",
+                    "value": 0
+                  }
+                }
+              ]
+          }
+        }
+      ]
+    }
+  ]
+}
+

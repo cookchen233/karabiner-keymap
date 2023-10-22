@@ -847,7 +847,7 @@
                 }
             },
             "to": [{
-                "shell_command": "~/Shao/script/listen_clipboard.sh"
+                "shell_command": "~/Coding/myscript/listen_clipboard.sh"
             }],
             "conditions": [{
                 "type": "variable_if",
@@ -867,7 +867,7 @@
             },
             "to": [
                 {
-                    "shell_command": "/Users/Chen/Shao/script/auto_login_rdp.sh"
+                    "shell_command": "~/Coding/myscript/auto_login_rdp.sh"
                 }
             ],
             "conditions": [{
@@ -971,7 +971,7 @@
             }]
         }]
     },{
-        "description": "SpaceFN: Space+M to Ctrl+Option+M, for customization",
+        "description": "SpaceFN: Space+M to Ctrl+Shift+Option+M, for customization",
         "manipulators": [{
             "type": "basic",
             "from": {
@@ -981,8 +981,8 @@
                 }
             },
             "to": [{
-                "key_code": "m",
-                "modifiers": ["command", "option"]
+                "key_code": "j",
+                "modifiers": ["option"]
             }],
             "conditions": [{
                 "type": "variable_if",
