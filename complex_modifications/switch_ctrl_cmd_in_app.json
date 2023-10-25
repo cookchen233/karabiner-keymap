@@ -57,6 +57,14 @@
             }]
         },{
             "type": "basic",
+            "from": {"key_code": "l","modifiers": {"mandatory": ["option"]}},
+            "to": [{"key_code": "quote","modifiers": ["control"]}],
+            "conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]},{
+                "type": "event_changed_if",
+                "value": false
+            }]
+        },{
+            "type": "basic",
             "from": {
                 "key_code": "a",
                 "modifiers": {

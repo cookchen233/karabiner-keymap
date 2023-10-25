@@ -1,0 +1,29 @@
+{
+  "title": "Command + S while pressed F10",
+  "rules": [
+    {
+      "description": "Save file while pressed F10",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "f10",
+              "modifiers": {
+                  "optional": ["any"]
+              }
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": ["command"],
+              "hold_down_milliseconds": 100
+            },{
+              "key_code": "f10"
+            }
+          ],"conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.VSCode"]}]
+        }
+      ]
+    }
+  ]
+}
+

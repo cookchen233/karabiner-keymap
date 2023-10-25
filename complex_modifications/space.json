@@ -732,6 +732,11 @@
                 "type": "variable_if",
                 "name": "spacefn_mode",
                 "value": 1
+            },{
+                "type": "frontmost_application_unless",
+                "bundle_identifiers": [
+                  "^com\\.microsoft\\.rdc\\.osx\\.beta"
+                ]
             }]
         }, 
         {
@@ -742,7 +747,30 @@
             "to": [{
                 "key_code": "quote",
                 "modifiers": ["shift"]
+            }],
+            "conditions": [{
+                "type": "frontmost_application_unless",
+                "bundle_identifiers": [
+                  "^com\\.microsoft\\.rdc\\.osx\\.beta"
+                ]
             }]
+            
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "quote"
+            },
+            "to": [{
+                "key_code": "quote",
+                "modifiers": ["shift"]
+            }],
+            "conditions": [{
+                "type": "variable_if",
+                "name": "spacefn_mode",
+                "value": 1
+            },{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.rdc.osx.beta"]}]
+            
         }, 
         {
             "type": "basic",
@@ -877,7 +905,7 @@
             }]
         }]
     }, {
-        "description": "SpaceFN: Space+P to Ctrl+Option+P, for customization",
+        "description": "SpaceFN: Space+P for customization",
         "manipulators": [{
             "type": "basic",
             "from": {
@@ -886,13 +914,14 @@
                     "optional": ["any"]
                 }
             },
-            "to": [{
-                "key_code": "p",
-                "modifiers": ["right_control", "right_command", "right_option"]
-            }],
             "to": [
                 {
-                    "shell_command": "open -a 'ChatGPT.app'"
+                    "shell_command": "open -a 'ChatGPT.app'",
+                    "hold_down_milliseconds": 100
+                },
+                {
+                    "key_code": "escape",
+                    "modifiers": ["shift"]
                 }
             ],
             "conditions": [{
@@ -971,7 +1000,7 @@
             }]
         }]
     },{
-        "description": "SpaceFN: Space+M to Ctrl+Shift+Option+M, for customization",
+        "description": "SpaceFN: Space+M to Option+F12, for customization",
         "manipulators": [{
             "type": "basic",
             "from": {
@@ -981,7 +1010,7 @@
                 }
             },
             "to": [{
-                "key_code": "j",
+                "key_code": "f12",
                 "modifiers": ["option"]
             }],
             "conditions": [{
