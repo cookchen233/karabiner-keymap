@@ -1,0 +1,40 @@
+{
+    "title": "Quick trasaction for tonghuashun",
+    "rules": [
+        {
+            "description": "Quick trasaction for tonghuashun",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "equal_sign",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "equal_sign",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^cn.com.10jqka.macstock"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,24 +1,25 @@
 {
-  "title": "Command + S while pressed F10",
+  "title": "VSCode extra doing while run code",
   "rules": [
     {
-      "description": "Save file while pressed F10",
+      "description": "VSCode extra doing while run code",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-              "key_code": "f10",
+              "key_code": "return_or_enter",
               "modifiers": {
-                  "optional": ["any"]
+                "mandatory": [
+                  "command"
+                ]
               }
           },
           "to": [
             {
-              "key_code": "s",
-              "modifiers": ["command"],
-              "hold_down_milliseconds": 100
-            },{
               "key_code": "f10"
+            },
+            {
+              "shell_command": "~/Coding/myscript/mysql_operation.py create_command_log"
             }
           ],"conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.VSCode"]}]
         }
