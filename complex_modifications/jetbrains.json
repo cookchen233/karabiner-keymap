@@ -1,0 +1,50 @@
+{
+    "title": "Jetbrains key combination",
+    "rules": [
+        {
+            "description": "CMD+- triggers (Option+CMD+[, Option+-, CMD+C) sequence",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "open_bracket",
+                            "modifiers": [
+                                "option",
+                                "command"
+                            ]
+                        },
+                        {
+                            "key_code": "hyphen",
+                            "modifiers": [
+                                "option"
+                            ]
+                        },
+                        {
+                            "key_code": "c",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "com.jetbrains.intellij"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

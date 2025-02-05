@@ -926,69 +926,6 @@
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "hyphen"
-                    },
-                    "to": [
-                        {
-                            "key_code": "hyphen"
-                        },
-                        {
-                            "key_code": "hyphen"
-                        },
-                        {
-                            "key_code": "return_or_enter",
-                            "repeat": false
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com.parallels"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "equal_sign",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "equal_sign",
-                            "modifiers": [
-                                "shift"
-                            ]
-                        },
-                        {
-                            "key_code": "equal_sign",
-                            "modifiers": [
-                                "shift"
-                            ]
-                        },
-                        {
-                            "key_code": "return_or_enter",
-                            "repeat": false
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com.parallels"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
                         "key_code": "equal_sign",
                         "modifiers": {
                             "optional": [
@@ -1423,7 +1360,7 @@
                             "shell_command": "~/Coding/myscript/auto_login_rdp.shxxx"
                         },
                         {
-                            "shell_command": "open -a 'Postman.app'"
+                            "shell_command": "open -a 'Apipost.app'"
                         }
                     ],
                     "conditions": [
@@ -1451,7 +1388,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "~/Coding/myscript/chatgpt.sh"
+                            "shell_command": "~/Coding/myscript/poe.sh"
                         }
                     ],
                     "conditions": [
@@ -1479,7 +1416,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'Google Chrome.app'"
+                            "shell_command": "open -a 'Microsoft Edge.app'"
                         }
                     ],
                     "conditions": [

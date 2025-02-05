@@ -40,13 +40,14 @@
           ],
           "conditions": [
             {
-                "type": "frontmost_application_unless",
-                "bundle_identifiers": [
-                    "^com.microsoft.rdc.osx.beta"
-                ]
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com.microsoft.rdc.osx.beta"
+              ]
             }
           ]
-        },{
+        },
+        {
           "type": "basic",
           "from": {
             "key_code": "caps_lock",
@@ -57,16 +58,16 @@
             }
           },
           "to_if_alone": [
-              {
-                  "key_code": "left_shift"
-              }
+            {
+              "key_code": "left_shift"
+            }
           ],
           "conditions": [
             {
-                "type": "frontmost_application_if",
-                "bundle_identifiers": [
-                    "^com.microsoft.rdc.osx.beta"
-                ]
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.microsoft.rdc.osx.beta"
+              ]
             }
           ]
         }
@@ -74,4 +75,3 @@
     }
   ]
 }
-
