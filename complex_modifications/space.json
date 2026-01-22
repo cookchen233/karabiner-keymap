@@ -53,7 +53,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+z to Space (hold to repeat)",
+            "description": "SpaceFN: Space + Z to Space (hold to repeat)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+e/d/s/f to Up/Down/Left/Right arrows",
+            "description": "SpaceFN: Space + E/D/S/F to Up/Down/Left/Right arrows",
             "manipulators": [
               {
                 "type": "basic",
@@ -110,7 +110,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+a to Control+a, Space+g to Control+e, for line-wise cursor movement",
+            "description": "SpaceFN: Space + A to Control + A, Space + G to Control + E, for line-wise cursor movement",
             "manipulators": [
                 {
                     "type": "basic",
@@ -167,7 +167,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+Command+Left/Right to Option+Left/Right, for word-wise cursor movement",
+            "description": "SpaceFN: Space + Command + Left/Right to Option + Left/Right, for word-wise cursor movement",
             "manipulators": [
                 {
                     "type": "basic",
@@ -230,7 +230,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+w/r to PageUp/PageDown",
+            "description": "SpaceFN: Space + W/R to PageUp/PageDown",
             "manipulators": [
                 {
                     "type": "basic",
@@ -281,7 +281,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+i/j/k/l to Shift+Up/Left/Down/Right arrows, for text selection",
+            "description": "SpaceFN: Space + I/J/K/L to Shift + Up/Left/Down/Right arrows, for text selection",
             "manipulators": [
                 {
                     "type": "basic",
@@ -390,7 +390,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+b to Command+Shift+[, Space+n to Command+Shift+], for tab switching",
+            "description": "SpaceFN: Space + B to Command + Shift + [, Space + N to Command + Shift + ], for tab switching",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1079,7 +1079,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+u to command+option+u, for add selection for next occurrence in idea and vscode",
+            "description": "SpaceFN: Space + U to command + option + u, for add selection for next occurrence in idea and vscode",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1111,7 +1111,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+c to control+c, space+v to control+r, for terminal",
+            "description": "SpaceFN: Space + C to Control + C, Space + V to Control + R, for terminal",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1168,7 +1168,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+P to open most used dev tool",
+            "description": "SpaceFN: Space + P to open most used dev tool",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1196,7 +1196,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+T to Ctrl+Option+T to open browser",
+            "description": "SpaceFN: Space + T to open browser",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1224,7 +1224,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+Y to Ctrl+Option+Y to open most used testing browser",
+            "description": "SpaceFN: Space + Y to open most used testing browser",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1238,7 +1238,7 @@
                     },
                     "to": [
                         {
-                            "shell_command": "open -a 'IntelliJ IDEA.app'"
+                            "shell_command": "open -a 'Google Chrome.app'"
                         }
                     ],
                     "conditions": [
@@ -1252,7 +1252,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+H to Ctrl+Option+H to open code editor",
+            "description": "SpaceFN: Space+H to open code editor",
             "manipulators": [
                 {
                     "type": "basic",
