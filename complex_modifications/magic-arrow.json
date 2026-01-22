@@ -1,8 +1,8 @@
 {
-  "title": "Magic -= to ->, =- to => in 5 seconds",
+  "title": "Magic Arrow",
   "rules": [
     {
-      "description": "Magic -= to ->, =- to => in 5 seconds",
+      "description": "Magic Arrow: Magic -= to -> and  =- to => in 5 seconds",
       "manipulators": [
         {
           "type": "basic",

@@ -1,8 +1,8 @@
 {
-    "title": "Change command to f15,f16 when pressed alone.",
+    "title": "Cmd to F15,F16",
     "rules": [
         {
-            "description": "Change command to f15,f16 when pressed alone.",
+            "description": "Cmd to F15,F16 for browser back/forward",
             "manipulators": [
                 {
                     "type": "basic",

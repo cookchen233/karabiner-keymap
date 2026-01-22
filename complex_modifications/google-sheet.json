@@ -1,0 +1,104 @@
+{
+  "title": "Google Sheets Enhancements",
+  "rules": [
+
+    {
+        "description": "F2: Insert row below (Ctrl+Option+I → R → B)",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "f2",
+              "modifiers": { "optional": ["any"] }
+            },
+            "to": [
+              {
+                "key_code": "i",
+                "modifiers": ["control", "option"]
+              }
+            ],
+            "parameters": {
+              "basic.to_delayed_action_delay_milliseconds": 200
+            },
+            "to_delayed_action": {
+              "to_if_invoked": [
+                { "key_code": "r" },
+                { "key_code": "b" }
+              ]
+            },
+            "conditions": [
+              {
+                "type": "frontmost_application_if",
+                "bundle_identifiers": [
+                  "^com\\.google\\.Chrome$",
+                  "^com\\.apple\\.Safari$",
+                  "^org\\.mozilla\\.firefox$",
+                  "^com\\.microsoft\\.edgemac$"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+    {
+      "description": "Cmd+Delete: Delete current row (Ctrl+Option+E → D → D)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": { "mandatory": ["command"], "optional": ["any"] }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "gs_delete_row_mode",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "e",
+              "modifiers": ["control", "option"]
+            }
+          ],
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 300
+          },
+          "to_delayed_action": {
+            "to_if_invoked": [
+              { "key_code": "d" },
+              { "key_code": "d" },
+              {
+                "set_variable": {
+                  "name": "gs_delete_row_mode",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "gs_delete_row_mode",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.google\\.Chrome$",
+                "^com\\.apple\\.Safari$",
+                "^org\\.mozilla\\.firefox$",
+                "^com.microsoft.edgemac$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

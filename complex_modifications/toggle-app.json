@@ -19,14 +19,14 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Visual Studio Code.app' ~/Notebook/todo/todo.md"
+              "shell_command": "open -a 'Visual Studio Code.app' ~/Coding/notebook/todo.md"
             }
           ]
         }
       ]
     },
     {
-      "description": "Command+g to open Sequel Ace",
+      "description": "Command+g to open Sequel Ace and press Command+P without delay",
       "manipulators": [
         {
           "type": "basic",
@@ -43,7 +43,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Sequel Ace.app'"
+              "shell_command": "open -a 'TablePlus.app' && osascript -e 'tell application \"System Events-------\" to keystroke \"p\" using {command down}'"
             }
           ]
         }
@@ -67,43 +67,62 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Windsurf.app'"
+              "shell_command": "open -a 'WindSurf.app'"
             }
           ]
         }
       ]
     },
     {
-      "description": "f2 to long bridge",
+      "description": "Command+h to command+option+shift+ctrl+h to prevent command+h used for hiding",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "f2"
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
           },
           "to": [
             {
-              "shell_command": "open -a 'Longbridge Pro SG.app'"
+              "key_code": "h",
+              "modifiers": ["control", "option"]
             }
           ]
         }
       ]
     },
     {
-      "description": "f3 to edge",
+      "description": "f1 to toggle iTerm2",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "f3"
+            "key_code": "f1"
           },
           "to": [
             {
-              "shell_command": "open -a 'MicroSoft Edge.app'"
+              "key_code": "f1",
+              "modifiers": ["shift"]
             }
+          ],
+          "conditions": [
+              {
+                  "type": "frontmost_application_unless",
+                  "bundle_identifiers": [
+                      "^com.microsoft.rdc.osx.beta"
+                  ]
+              }
           ]
         }
       ]
     }
+    
   ]
 }

@@ -22,8 +22,33 @@
                 "modifiers":["command"]
             }
         ]
-    }]
+      }]
+    },
+    {
+      "description": "iTerm2: Cmd+Delete 映射为删除单词 (Send Ctrl+W)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_or_backspace",
+            "modifiers": { "mandatory": ["left_command"] }
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": ["^com\\.googlecode\\.iterm2$"]
+            }
+          ]
+        }
+      ]
     }
+    
   ]
 }
 

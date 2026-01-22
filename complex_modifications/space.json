@@ -40,6 +40,14 @@
                                 "value": 0
                             }
                         }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.osx.beta"
+                            ]
+                        }
                     ]
                 }
             ]
@@ -73,104 +81,36 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+[sdef] to Left, Down, Up, Right",
+            "description": "SpaceFN: Space+e/d/s/f to Up/Down/Left/Right arrows",
             "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "s",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_arrow"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "d",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "down_arrow"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "e",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "up_arrow"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "f",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_arrow"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                }
+              {
+                "type": "basic",
+                "from": { "key_code": "e", "modifiers": { "optional": ["any"] } },
+                "to": [{ "key_code": "up_arrow" }],
+                "conditions": [{ "type": "variable_if", "name": "spacefn_mode", "value": 1 }]
+              },
+              {
+                "type": "basic",
+                "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
+                "to": [{ "key_code": "down_arrow" }],
+                "conditions": [{ "type": "variable_if", "name": "spacefn_mode", "value": 1 }]
+              },
+              {
+                "type": "basic",
+                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
+                "to": [{ "key_code": "left_arrow" }],
+                "conditions": [{ "type": "variable_if", "name": "spacefn_mode", "value": 1 }]
+              },
+              {
+                "type": "basic",
+                "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
+                "to": [{ "key_code": "right_arrow" }],
+                "conditions": [{ "type": "variable_if", "name": "spacefn_mode", "value": 1 }]
+              }
             ]
         },
         {
-            "description": "SpaceFN: Space+a to Control+a (move to line start), Space+g to Control+e (move to line end)",
+            "description": "SpaceFN: Space+a to Control+a, Space+g to Control+e, for line-wise cursor movement",
             "manipulators": [
                 {
                     "type": "basic",
@@ -195,12 +135,6 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
-                            ]
                         }
                     ]
                 },
@@ -227,19 +161,13 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
-                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "SpaceFN: Command+left_arrow to Option+left_arrow (move to one word left), Command+right_arrow to Option+right_arrow (move to one word right)",
+            "description": "SpaceFN: Space+Command+Left/Right to Option+Left/Right, for word-wise cursor movement",
             "manipulators": [
                 {
                     "type": "basic",
@@ -267,12 +195,6 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
-                            ]
                         }
                     ]
                 },
@@ -302,19 +224,13 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
-                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "SpaceFN: Space+w to Page Up, Space+r to Page Down",
+            "description": "SpaceFN: Space+w/r to PageUp/PageDown",
             "manipulators": [
                 {
                     "type": "basic",
@@ -365,7 +281,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+[ijkl] to Select-Left, Select-Down, Select-Up, Select-Right",
+            "description": "SpaceFN: Space+i/j/k/l to Shift+Up/Left/Down/Right arrows, for text selection",
             "manipulators": [
                 {
                     "type": "basic",
@@ -474,7 +390,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+b to Select Left Tab, Space+n to Select Right Tab",
+            "description": "SpaceFN: Space+b to Command+Shift+[, Space+n to Command+Shift+], for tab switching",
             "manipulators": [
                 {
                     "type": "basic",
@@ -500,12 +416,6 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com.microsoft.rdc.osx.beta"
-                            ]
                         }
                     ]
                 },
@@ -533,76 +443,13 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com.microsoft.rdc.osx.beta"
-                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "description": "SpaceFN: Space+c to control+c, space+v to control+r, for terminal",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "c",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "c",
-                            "modifiers": [
-                                "right_control"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "v",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "r",
-                            "modifiers": [
-                                "right_control"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "SpaceFN: Space+(`, 1-8, -, =, [, ], ;, ,, ., /) to shift with, Space+(9,0,\\,') to self and if alone to shift with",
+            "description": "SpaceFN: Shifted number row and symbols",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1113,12 +960,6 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
-                            ]
                         }
                     ]
                 },
@@ -1132,14 +973,6 @@
                             "key_code": "quote",
                             "modifiers": [
                                 "shift"
-                            ]
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com\\.microsoft\\.rdc\\.osx\\.beta"
                             ]
                         }
                     ]
@@ -1162,12 +995,6 @@
                             "type": "variable_if",
                             "name": "spacefn_mode",
                             "value": 1
-                        },
-                        {
-                            "type": "frontmost_application_if",
-                            "bundle_identifiers": [
-                                "^com.microsoft.rdc.osx.beta"
-                            ]
                         }
                     ]
                 },
@@ -1252,7 +1079,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+u to command+option+u, for customization",
+            "description": "SpaceFN: Space+u to command+option+u, for add selection for next occurrence in idea and vscode",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1284,12 +1111,12 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+q to Ctrl+Option+q, for customization",
+            "description": "SpaceFN: Space+c to control+c, space+v to control+r, for terminal",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "q",
+                        "key_code": "c",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -1298,9 +1125,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "q",
+                            "key_code": "c",
                             "modifiers": [
-                                "right_option"
+                                "right_control"
                             ]
                         }
                     ],
@@ -1311,16 +1138,11 @@
                             "value": 1
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "SpaceFN: Space+x to Ctrl+Option+x for customization",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "x",
+                        "key_code": "v",
                         "modifiers": {
                             "optional": [
                                 "any"
@@ -1329,39 +1151,11 @@
                     },
                     "to": [
                         {
-                            "shell_command": "~/Coding/myscript/listen_clipboard.sh"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "description": "SpaceFN: Space+O to Ctrl+Option+O, for customization",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "o",
-                        "modifiers": {
-                            "optional": [
-                                "any"
+                            "key_code": "r",
+                            "modifiers": [
+                                "right_control"
                             ]
                         }
-                    },
-                    "to": [
-                        {
-                            "shell_command": "~/Coding/myscript/auto_login_rdp.shxxx"
-                        },
-                        {
-                            "shell_command": "open -a 'Apipost.app'"
-                        }
                     ],
                     "conditions": [
                         {
@@ -1374,7 +1168,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+P for customization",
+            "description": "SpaceFN: Space+P to open most used dev tool",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1402,7 +1196,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+T to Ctrl+Option+T, for customization",
+            "description": "SpaceFN: Space+T to Ctrl+Option+T to open browser",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1430,7 +1224,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+Y to Ctrl+Option+Y, for customization",
+            "description": "SpaceFN: Space+Y to Ctrl+Option+Y to open most used testing browser",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1458,7 +1252,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+H to Ctrl+Option+H, for customization",
+            "description": "SpaceFN: Space+H to Ctrl+Option+H to open code editor",
             "manipulators": [
                 {
                     "type": "basic",
@@ -1486,7 +1280,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Space+M to Option+F12, for customization",
+            "description": "SpaceFN: Space+M to Option+F12, for toggle the terminal panel in vscode",
             "manipulators": [
                 {
                     "type": "basic",
