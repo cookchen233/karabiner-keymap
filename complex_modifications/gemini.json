@@ -1,0 +1,27 @@
+{
+  "title": "When Google Gemini is fronted",
+  "rules": [
+    {
+      "description": "Cmd + N to open new chat in Google Gemini",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "n",
+              "modifiers": {
+                  "mandatory": ["command"],
+                  "optional": ["any"]
+              }
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": ["command", "shift"]
+            }
+          ],"conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["com.microsoft.edgemac.app.gdfaincndogidkdcdkhapmbffkckdkhn"]}]
+        }
+      ]
+    }
+  ]
+}
+

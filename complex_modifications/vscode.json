@@ -7,19 +7,14 @@
         {
           "type": "basic",
           "from": {
-              "key_code": "return_or_enter",
-              "modifiers": {
-                "mandatory": [
-                  "command"
-                ]
-              }
+              "key_code": "f10"
           },
           "to": [
             {
               "key_code": "f10"
             },
             {
-              "shell_command": "~/Coding/myscript/mysql_operation.py create_command_log"
+              "shell_command": "~/go/bin/mycli command-log create"
             }
           ],"conditions": [{"type": "frontmost_application_if","bundle_identifiers": ["^com.microsoft.VSCode"]}]
         }
