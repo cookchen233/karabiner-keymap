@@ -449,7 +449,7 @@
             ]
         },
         {
-            "description": "SpaceFN: Shifted number row and symbols",
+            "description": "SpaceFN: Shifted number row(0-9) and symbols",
             "manipulators": [
                 {
                     "type": "basic",
@@ -715,6 +715,14 @@
                                 "shift"
                             ]
                         }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.osx.beta"
+                            ]
+                        }
                     ]
                 },
                 {
@@ -745,6 +753,14 @@
                             "key_code": "0",
                             "modifiers": [
                                 "shift"
+                            ]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.osx.beta"
                             ]
                         }
                     ]
@@ -912,6 +928,14 @@
                                 "shift"
                             ]
                         }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.osx.beta"
+                            ]
+                        }
                     ]
                 },
                 {
@@ -975,26 +999,13 @@
                                 "shift"
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "quote"
-                    },
-                    "to": [
-                        {
-                            "key_code": "quote",
-                            "modifiers": [
-                                "shift"
-                            ]
-                        }
                     ],
                     "conditions": [
                         {
-                            "type": "variable_if",
-                            "name": "spacefn_mode",
-                            "value": 1
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com.microsoft.rdc.osx.beta"
+                            ]
                         }
                     ]
                 },
