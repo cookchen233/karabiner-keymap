@@ -1,68 +1,80 @@
 {
-    "title": "Cmd to F15,F16",
-    "rules": [
+  "title": "Command/Option Swap + F15/F16",
+  "rules": [
+    {
+      "description": "For Non-Apple Keyboards: Physical Alt becomes Cmd (Short press F15/F16), Physical Win becomes Alt",
+      "manipulators": [
         {
-            "description": "Cmd to F15,F16 for browser back/forward",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "left_command",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_command"
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "f15"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com.microsoft.rdc.osx.beta"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "right_command",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_command"
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "f16"
-                        }
-                    ],
-                    "conditions": [
-                        {
-                            "type": "frontmost_application_unless",
-                            "bundle_identifiers": [
-                                "^com.microsoft.rdc.osx.beta"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "type": "basic",
+          "from": {
+            "key_code": "left_option",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            { "key_code": "left_command", "lazy": true }
+          ],
+          "to_if_alone": [
+            { "key_code": "f15" }
+          ],
+          "conditions": [
+            {
+              "type": "device_unless",
+              "identifiers": [
+                { "is_built_in_keyboard": true },
+                { "vendor_id": 76 }
+              ]
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.osx\\.beta$"]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [
+            { "key_code": "right_command", "lazy": true }
+          ],
+          "to_if_alone": [
+            { "key_code": "f16" }
+          ],
+          "conditions": [
+            {
+              "type": "device_unless",
+              "identifiers": [
+                { "is_built_in_keyboard": true },
+                { "vendor_id": 76 }
+              ]
+            },
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.osx\\.beta$"]
+            }
+          ]
+        },
+        {
+          "description": "Physical Command to Option (Swap remainder)",
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{ "key_code": "left_option" }],
+          "conditions": [
+            {
+              "type": "device_unless",
+              "identifiers": [
+                { "is_built_in_keyboard": true },
+                { "vendor_id": 76 }
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
